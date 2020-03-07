@@ -66,81 +66,75 @@
         </header>
         <div class="content"><h1 style="width:100vw;text-align: center;">Informations pratiques</h1></div>
         <div class="content">
-
             <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
             <div class="content-sizer">
-                <!-- //TODO: Voir comment ajouter une carte maintenant que maps api est payant. -->
-                <div id="map" style="width:100%;height:400px;" >
-                </div>
-                <script>
-                    function myMap() {
-                        var myCenter = new google.maps.LatLng(48.3434960,-4.722101);
-                        var mapProp= { center: myCenter, zoom:16, };
-                        var mapCanvas = document.getElementById("map");
-                        var map=new google.maps.Map(document.getElementById("map"),mapProp);
-                        var marker = new google.maps.Marker({
-                            position: myCenter,
-                        });
-                        marker.setMap(map); 
-                    }
-                </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYwSF0SBltKc6R2IH6t2bDfZX89sC6Xk&callback=myMap"></script>
-
-                <div class="ui warning message">
-                    <div class="header" style="width:25vw;text-align: center;">
-                        Si la carte ne s'affiche pas, vous pouvez vous rediriger vers ce <a href="https://www.google.fr/maps/place/Espace+culturel+K%C3%A9raudy/@48.3435963,-4.723936,482m/data=!3m2!1e3!4b1!4m5!3m4!1s0x481693aa40584b5b:0x7b90f4601eb1a09c!8m2!3d48.3435963!4d-4.7217473">lien</a>.
-                    </div>
-                </div>
-
-                <!-- TODO: Mettre à jour les horaires des navettes -->
-                <div class="ui stackable two column grid">
-                    <div class="column">
-                        <div class="ui very padded  container segment">
-                            <h1>Navette aller - Direction Keraudy</h1>
-                            <p>Départ de Liberté 21h15</p>
-                            <p>Départ de l'ENIB 21h45</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui very padded  container segment">
-                            <h1>Navette retour - Direction Maison</h1>
-                            <p>Vers Liberté 2h</p>
-                            <p>Vers Technopole puis Liberté 2h30</p>
-                            <p>Vers Technopole puis Liberté 3h20</p>
+                <div class="ui divided huge items">
+                <div class="item">
+                    <img src="img/info/virus.svg" alt="Pourquoi ?" class="image" \>
+                    <div class="content">
+                        <a class="header">Pourquoi la 54e nuit de l'ENIB est reportée ?</a>
+                        <div class="description">
+                            <p>En accord avec les recommandations du ministère de la Santé et de l'OMS, déconseillant la tenue d'événement quand ils conduisent à des mélanges avec des personnes issues de zones où le virus, COVID-19, circule possiblement, l'équipe organisatrice et l'administration de l'ENIB ont préféré décaler l'événement à une date ultérieure.</p>
                         </div>
                     </div>
                 </div>
-                <br />
-
-
-                <!-- TODO: Mettre à jour les tarifs des consommations. -->
-                <!-- <div class="ui very padded container segment">
-                    <h1>Tarif des consommations </h1>
-                    <div class="ui bulleted list">
-                        <div class="item">Champagnes de la Maison Douard
-                            <div class="list">
-                                <div class="item">Prestige ( 30 €)</div>
-                                <div class="item">Brut ( 20€ )</div>
-                                <div class="item">Demi-sec ( 25€ )</div>
-                            </div>
-                        </div>
-                        <div class="item">Bière
-                            <div class="list">
-                                <div class="item">Coreff blonde ( 2€ le demi , 4€ la pinte )</div>
-                            </div>
-                        </div>
-                        <div class="item">Softs ( 1€ )
-                            <div class="list">
-                                <div class="item">Coca-Cola</div>
-                                <div class="item">Ice-Tea</div>
-                                <div class="item">Orangina</div>
-                                <div class="item">Minuit Maid</div>
-                            </div>
+                <div class="item">
+                    <img src="img/info/calendar.svg" alt="Quand ?" class="image" \>
+                    <div class="content">
+                        <a class="header">Quand aura lieu la 54e nuit de l'ENIB ?</a>
+                        <div class="description">
+                            <p>Pour le moment, aucune date n'a encore été fixée. Nous vous tiendrons informé dès que nous en saurons plus.</p>
                         </div>
                     </div>
-                </div> -->
+                </div>
+                <div class="item">
+                    <img src="img/info/delivery-delay.svg" alt="Tout ?" class="image" \>
+                    <div class="content">
+                        <a class="header">Le dîner traiteur et la remise des diplômes sont-ils également concernés ?</a>
+                        <div class="description">
+                            <p>Oui, c'est l'ensemble des événements prévus le 28 mars 2020 qui sont reportés.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/info/change.svg" alt="Des changements ?" class="image" \>
+                    <div class="content">
+                        <a class="header">Le lieu du gala va-t-il changer ?</a>
+                        <div class="description">
+                            <p>Non, tout reste au même endroit, seule la date est concernée. Même le déroulé reste identique !</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/info/refund.svg" alt="Remboursement" class="image" \>
+                    <div class="content">
+                        <a class="header">Comment puis-je me faire rembourser ?</a>
+                        <div class="description">
+                            <p>Toutes les personnes ayant acheté des places (pour eux et/ou leurs proches) sur Helloasso seront contactées par email via l'adresse transmise lors de leur inscription. Elles pourront se faire rembourser, après nous avoir contactés par email (nuitenib@enib.fr), après avoir transmis une pièce d'identité et avoir indiqué le choix du mode de remboursement (par chèque ou en nous fournissant un RIB).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/info/circle_arrow.svg" alt="Le même billet ?" class="image" \>
+                    <div class="content">
+                        <a class="header">Pouvons-nous conserver notre billet pour la prochaine date ?</a>
+                        <div class="description">
+                            <p>Non, les billets achetés dans le cadre de la soirée du 28 mars ne seront pas valables lors de la prochaine date. Ainsi, nous vous invitons à bien vouloir vous signaler rapidement afin de vous rembourser. Nous vous communiquerons ultérieurement le lien de la prochaine billetterie.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/info/other-refund.svg" alt="Les frais annexes" class="image" \>
+                    <div class="content">
+                        <a class="header">Les dons Helloasso me seront-ils remboursés ?</a>
+                        <div class="description">
+                            <p>Non, les dons faits à Helloasso ne peuvent prétendre à aucun remboursement de la part de la nuit de l'ENIB, tout comme, les frais de transports, d’hôtellerie, de gestion, d’envoi, etc. Seul le prix du billet sera remboursé.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
         <footer>
             <div class="ui stackable thre equal width grid">
                 <div class="column"><i class="icon copyright"></i> 2020 Nuit de l'enib</div>

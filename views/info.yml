@@ -1,0 +1,11 @@
+path: /info
+template: info
+context:
+  static:
+    pagetitle: Informations
+    meta:
+      description: Informations sur les tarifs et les navettes.
+      keywords:
+        - informations
+        - tarifs
+        - navettes

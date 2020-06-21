@@ -1,2 +1,5 @@
 project-name: Nuit de l'ENIB
 base-path: /
+templates:
+  providers:
+    - jinja2

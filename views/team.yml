@@ -1,0 +1,11 @@
+path: /team
+template: team
+context:
+  static:
+    pagetitle: L'équipe
+    meta:
+      description: Présentation de l'équipe du gala.
+      keywords:
+        - description
+        - journée
+        - équipe

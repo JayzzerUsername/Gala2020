@@ -1,82 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="gala,enib,nuit,2020,diplome,description,cashless">
-    <meta name="description" content="Description de l'utilisation du cashless." />
-    <title>Cashless - Nuit de l'ENIB</title>
-    <link rel="canonical" href="https://gala.enib.net/" />
-    <link rel="icon" type="image/png" href="img/favicon/favicon-96.png" />
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="css/partners.css">
-    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,500" rel="stylesheet">
+{% extends "base_menubar.html" %}
 
-    </head>
-<body>
-    <div class="ui sidebar huge inverted menu vertical">
-        <div class="item">
-            <div class="header">Navigations</div>
-            <div class="menu">
-                <a href="home.html" class="item">Accueil <i class="icon home"></i></a>
-            </div>
-            <div class="menu">
-                <a href="day.html" class="item">Journée <i class="icon calendar"></i></a>
-            </div>
-            <div class="menu">
-                <a href="team.html" class="item">L'équipe <i class="icon users"></i></a>
-            </div>
-            <div class="menu">
-                <a href="store.html" class="item">Billetterie <i class="icon ticket"></i></a>
-            </div>
-            <div class="menu">
-                <a href="partners.html" class="item">Partenaires <i class="icon handshake"></i></a>
-            </div>
-            <div class="menu">
-                <a href="cashless.html" class="item">Cashless <i class="icon dollar sign"></i></a>
-            </div>
-            <div class="menu">
-                <a href="info.html" class="item">Infos pratiques<i class="icon info circle"></i></a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div id="loader-wrapper">
-        <div id="loader"></div>
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% asset 'css/partners.css' %}">
+{% endblock %}
 
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-
-    </div>
-    <div class="pusher">
-        <nav class="header-nav-min">
-            <a class="btn-header"><i class="icon sidebar"></i></a>
-        </nav>
-        <header>
-            <a href="home.html" class="header-title"><h1>Nuit de l'enib</h1></a>
-            <nav class="header-nav-max">
-                <a href="day.html">Journée</a>
-                <a href="team.html">L'équipe</a>
-                <a href="store.html">Billetterie</a>
-                <a href="partners.html">Partenaires</a>
-                <a href="cashless.html" class="is-active">Cashless</a>
-                <a href="info.html" >Infos pratiques</a>
-            </nav>
-        </header>
-
+{% block content %}
     <div class="content"><h1 style="width:100vw;text-align: center;">Le Cashless</h1></div>
 
     <div class="content">
         <div class="content-sizer">
-            <p>Fini les espèces, place au Cashless ! Le système de paiement sans contact intégré à votre carte bancaire, simple et rapide vous permet de régler vos consommations durant la soirée. Payez au bar en quelques secondes grâce à votre carte bancaire.</p>
+            <p>
+                Fini les espèces, place au Cashless&nbsp;! Le système de paiement sans contact intégré à votre carte bancaire, simple et rapide vous permet de régler vos consommations durant la soirée. Payez au bar en quelques secondes grâce à votre carte bancaire.
+            </p>
         </div>
     </div>
-    <!-- TODO: rendre l'image responsive (https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html) -->
+
+    {# TODO: rendre l'image responsive (https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html) #}
     <div class="content">
         <div class="content-sizer">
             <img
-                src="img/cashless.png" 
+                src="{% asset 'img/cashless.png' %}" 
                 alt="Infographie Cashless"
                 height="300px" 
                 width="600px" 
@@ -86,9 +29,9 @@
                        margin-left: auto;
                        margin-right: auto;"
             />
-            <!-- <div class="ui divided huge items">
+            {# <div class="ui divided huge items">
                 <div class="item">
-                    <img src="img/cashless/1.png" alt="Bracelet" class="image" \>
+                    <img src="{% asset 'img/cashless/1.png %}" alt="Bracelet" class="image" />
                     <div class="content">
                         <a class="header">ÉTAPE 1 : JE ME PROCURE UN BRACELET CASHLESS</a>
                         <div class="description">
@@ -97,7 +40,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/cashless/2.png" alt="Soirée" class="image" \>
+                    <img src="{% asset 'img/cashless/2.png' %}" alt="Soirée" class="image" />
                     <div class="content">
                         <a class="header">ÉTAPE 2 : JE PROFITE</a>
                         <div class="description">
@@ -106,7 +49,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/cashless/3.png" alt="Rechargement" class="image" \>
+                    <img src="{% asset 'img/cashless/3.png' %}" alt="Rechargement" class="image" />
                     <div class="content">
                         <a class="header">ÉTAPE 3 : JE RECHARGE MON BRACELET</a>
                         <div class="description">
@@ -115,7 +58,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="img/cashless/4.png" alt="Remboursement" class="image" \>
+                    <img src="{% asset 'img/cashless/4.png' %}" alt="Remboursement" class="image" />
                     <div class="content">
                         <a class="header">ÉTAPE 4 : JE ME FAIS REMBOURSER</a>
                         <div class="description">
@@ -123,32 +66,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div> #}
         </div>
-        <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
     </div>
-
-        <footer>
-            <div class="ui stackable thre equal width grid">
-                <div class="column"><i class="icon copyright"></i> 2020 Nuit de l'enib</div>
-                <div class="column">
-                    <a target="_blank" href="https://www.facebook.com/Nuit-de-lENIB-1672448326336009/">
-                        <i class="icon grey facebook"></i>
-                    </a> | 
-                    <a class="icone icone-mail" target="_blank" href="mailto:nuitenib@enib.fr">
-                        <i class="icon grey mail"></i>
-                    </a> | 
-                    <a class="icone icone-enib" target="_blank" href="https://enib.net/">
-                        <svg height="1.18em" width="2.18em">
-                            <text x="0" y="16" >ENIB</text>
-                        </svg> 
-                    </a>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
-    <script type="text/javascript" src="js/function.js"></script>
-</body>
-</html>
+{% endblock %}

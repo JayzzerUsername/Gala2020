@@ -1,0 +1,5 @@
+path: /sitemap.xml
+template: sitemap.xml.jinja2
+context:
+  dynamic:
+    now: datetime.now()

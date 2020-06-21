@@ -1,0 +1,11 @@
+path: /store
+template: store
+context:
+  static:
+    pagetitle: Billeterie
+    meta:
+      description: Achetez vos billets dès maintenant.
+      keywords:
+        - achats
+        - billets
+        - billet

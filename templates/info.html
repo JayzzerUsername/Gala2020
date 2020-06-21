@@ -1,161 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="gala,enib,nuit,2020,diplome,informations,tarifs,navettes">
-    <meta name="description" content="Informations sur les tarifs et les navettes." />
-    <title>Informations - Nuit de l'ENIB</title>
-    <link rel="canonical" href="https://gala.enib.net/" />
-    <link rel="icon" type="image/png" href="img/favicon/favicon-96.png" />
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="css/partners.css">
-    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,500" rel="stylesheet">
+{% extends "base_menubar.html" %}
 
-    </head>
-<body ng-controller="DefaultCtrl">
-    <div class="ui sidebar huge inverted menu vertical">
-        <div class="item">
-            <div class="header">Navigations</div>
-            <div class="menu">
-                <a href="home.html" class="item">Accueil <i class="icon home"></i></a>
-            </div>
-            <div class="menu">
-                <a href="day.html" class="item">Journée <i class="icon calendar"></i></a>
-            </div>
-            <div class="menu">
-                <a href="team.html" class="item">L'équipe <i class="icon users"></i></a>
-            </div>
-            <div class="menu">
-                <a href="store.html" class="item">Billetterie <i class="icon ticket"></i></a>
-            </div>
-            <div class="menu">
-                <a href="partners.html" class="item">Partenaires <i class="icon handshake"></i></a>
-            </div>
-            <div class="menu">
-                <a href="cashless.html" class="item">Cashless <i class="icon dollar sign"></i></a>
-            </div>
-            <div class="menu">
-                <a href="info.html" class="item">Infos pratiques<i class="icon info circle"></i></a>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div id="loader-wrapper">
-        <div id="loader"></div>
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{% asset 'css/partners.css' %}">
+{% endblock %}
 
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-
-    </div>
-    <div class="pusher">
-        <nav class="header-nav-min">
-            <a class="btn-header"><i class="icon sidebar"></i></a>
-        </nav>
-        <header>
-            <a href="home.html" class="header-title"><h1>Nuit de l'enib</h1></a>
-            <nav class="header-nav-max">
-                <a href="day.html">Journée</a>
-                <a href="team.html">L'équipe</a>
-                <a href="store.html">Billetterie</a>
-                <a href="partners.html">Partenaires</a>
-                <a href="cashless.html">Cashless</a>
-                <a href="info.html" class="is-active">Infos pratiques</a>
-            </nav>
-        </header>
-        <div class="content"><h1 style="width:100vw;text-align: center;">Informations pratiques</h1></div>
-        <div class="content">
-            <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
-            <div class="content-sizer">
-                <div class="ui divided huge items">
-                <div class="item">
-                    <img src="img/info/virus.svg" alt="Pourquoi ?" class="image" \>
-                    <div class="content">
-                        <a class="header">Pourquoi la 54e nuit de l'ENIB est-elle reportée ?</a>
-                        <div class="description">
-                            <p>En accord avec les recommandations du ministère de la Santé et de l'OMS, déconseillant la tenue d'événement quand ils conduisent à des mélanges avec des personnes issues de zones où le virus, COVID-19, circule possiblement. L'équipe organisatrice et l'administration de l'Ecole Nationale d'Ingénieurs de Brest ont préféré conjointement décaler l'événement à une date ultérieure. Ceci afin de palier les risques liés à la transmision du virus. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/calendar.svg" alt="Quand ?" class="image" \>
-                    <div class="content">
-                        <a class="header">Quand aura lieu la 54e nuit de l'ENIB ?</a>
-                        <div class="description">
-                            <p>Pour le moment, aucune date n'a encore été fixée. Nous vous tiendrons informé dès que nous en saurons plus !</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/delivery-delay.svg" alt="Tout ?" class="image" \>
-                    <div class="content">
-                        <a class="header">Le dîner traiteur et la remise des diplômes sont-ils également concernés ?</a>
-                        <div class="description">
-                            <p>Oui, c'est l'ensemble des événements prévus le 28 mars 2020 qui sont reportés. Ainsi, la Remise des Diplômes, prévue à 14h au multiplexe Liberté, le Dîner et la Soirée de Gala, prévus à partir de 18h à l'espace Keraudy sont intégralement reportés. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/change.svg" alt="Des changements ?" class="image" \>
-                    <div class="content">
-                        <a class="header">Le lieu du gala va-t-il changer ?</a>
-                        <div class="description">
-                            <p>Non, tout reste au même endroit, seule la date est concernée. Même le déroulé reste identique ! Toutefois, sur l'horaire, la programmation des artistes peut être amenée à évoluer. Vous pourrez retrouver toutes les informations sur notre <a href='day.html'>page</a>, mise à jour quotidiennement.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/refund.svg" alt="Remboursement" class="image" \>
-                    <div class="content">
-                        <a class="header">Comment puis-je me faire rembourser ?</a>
-                        <div class="description">
-                            <p>Toutes les personnes ayant acheté des places (pour eux et/ou leurs proches) sur Helloasso pourront se faire rembourser, uniquement après nous avoir contactés par email (nuitenib@enib.fr), après avoir transmis une pièce d'identité et avoir indiqué le choix du mode de remboursement (par chèque en nous fournissant votre adresse postale, ou en nous fournissant un RIB).</p>
-                            <p>Toutes personnes ne souhaitant pas se faire rembourser doivent garder à l'esprit que leur(s) billet(s) <strong><U>ne seront pas valables</U></strong> à la nouvelle date de la 54e nuit de l'ENIB !</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/circle_arrow.svg" alt="Le même billet ?" class="image" \>
-                    <div class="content">
-                        <a class="header">Pouvons-nous conserver notre billet pour la prochaine date ?</a>
-                        <div class="description">
-                            <p>Non, les billets achetés dans le cadre de la soirée du 28 mars ne seront pas valables lors de la prochaine date. Ainsi, nous vous invitons à bien vouloir vous signaler <strong><U>avant le 30 avril 2020</U></strong> afin de vous rembourser. Nous vous communiquerons ultérieurement le lien de la prochaine billetterie.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/info/other-refund.svg" alt="Les frais annexes" class="image" \>
-                    <div class="content">
-                        <a class="header">Les dons Helloasso me seront-ils remboursés ?</a>
-                        <div class="description">
-                            <p>Non, les dons faits à Helloasso ne peuvent prétendre à aucun remboursement de la part de la nuit de l'ENIB, tout comme, les frais de transports, d’hôtellerie, de gestion, d’envoi, etc. Seul le prix du billet sera remboursé.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <footer>
-            <div class="ui stackable thre equal width grid">
-                <div class="column"><i class="icon copyright"></i> 2020 Nuit de l'enib</div>
-                <div class="column">
-                    <a target="_blank" href="https://www.facebook.com/Nuit-de-lENIB-1672448326336009/">
-                        <i class="icon grey facebook"></i>
-                    </a> | 
-                    <a class="icone icone-mail" target="_blank" href="mailto:nuitenib@enib.fr">
-                        <i class="icon grey mail"></i>
-                    </a> | 
-                    <a class="icone icone-enib" target="_blank" href="https://enib.net/">
-                        <svg height="1.18em" width="2.18em">
-                            <text x="0" y="16" >ENIB</text>
-                        </svg> 
-                    </a>
-                </div>
-        </footer>
-    </div>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
-    <script type="text/javascript" src="js/function.js"></script>
-</body>
-</html>
+{% block content %}
+		<div class="content"><h1 style="width:100vw;text-align: center;">Informations pratiques</h1></div>
+		<div class="content">
+			<div class="content-sizer">
+				<div class="ui divided huge items">
+				<div class="item">
+					<img src="{% asset 'img/info/virus.svg' %}" alt="Pourquoi ?" class="image" />
+					<div class="content">
+						<a class="header">Pourquoi la 54e nuit de l'ENIB est-elle reportée ?</a>
+						<div class="description">
+							<p>En accord avec les recommandations du ministère de la Santé et de l'OMS, déconseillant la tenue d'événement quand ils conduisent à des mélanges avec des personnes issues de zones où le virus, COVID-19, circule possiblement. L'équipe organisatrice et l'administration de l'Ecole Nationale d'Ingénieurs de Brest ont préféré conjointement décaler l'événement à une date ultérieure. Ceci afin de palier les risques liés à la transmision du virus. </p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/calendar.svg' %}" alt="Quand ?" class="image" />
+					<div class="content">
+						<a class="header">Quand aura lieu la 54e nuit de l'ENIB ?</a>
+						<div class="description">
+							<p>Pour le moment, aucune date n'a encore été fixée. Nous vous tiendrons informé dès que nous en saurons plus !</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/delivery-delay.svg' %}" alt="Tout ?" class="image" />
+					<div class="content">
+						<a class="header">Le dîner traiteur et la remise des diplômes sont-ils également concernés ?</a>
+						<div class="description">
+							<p>Oui, c'est l'ensemble des événements prévus le 28 mars 2020 qui sont reportés. Ainsi, la Remise des Diplômes, prévue à 14h au multiplexe Liberté, le Dîner et la Soirée de Gala, prévus à partir de 18h à l'espace Keraudy sont intégralement reportés. </p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/change.svg' %}" alt="Des changements ?" class="image" />
+					<div class="content">
+						<a class="header">Le lieu du gala va-t-il changer ?</a>
+						<div class="description">
+							<p>Non, tout reste au même endroit, seule la date est concernée. Même le déroulé reste identique ! Toutefois, sur l'horaire, la programmation des artistes peut être amenée à évoluer. Vous pourrez retrouver toutes les informations sur notre <a href="{% url 'day' %}">page</a>, mise à jour quotidiennement.</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/refund.svg' %}" alt="Remboursement" class="image" />
+					<div class="content">
+						<a class="header">Comment puis-je me faire rembourser ?</a>
+						<div class="description">
+							<p>Toutes les personnes ayant acheté des places (pour eux et/ou leurs proches) sur Helloasso pourront se faire rembourser, uniquement après nous avoir contactés par email (nuitenib@enib.fr), après avoir transmis une pièce d'identité et avoir indiqué le choix du mode de remboursement (par chèque en nous fournissant votre adresse postale, ou en nous fournissant un RIB).</p>
+							<p>Toutes personnes ne souhaitant pas se faire rembourser doivent garder à l'esprit que leur(s) billet(s) <strong><U>ne seront pas valables</U></strong> à la nouvelle date de la 54e nuit de l'ENIB !</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/circle_arrow.svg' %}" alt="Le même billet ?" class="image" />
+					<div class="content">
+						<a class="header">Pouvons-nous conserver notre billet pour la prochaine date ?</a>
+						<div class="description">
+							<p>Non, les billets achetés dans le cadre de la soirée du 28 mars ne seront pas valables lors de la prochaine date. Ainsi, nous vous invitons à bien vouloir vous signaler <strong><U>avant le 30 avril 2020</U></strong> afin de vous rembourser. Nous vous communiquerons ultérieurement le lien de la prochaine billetterie.</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="{% asset 'img/info/other-refund.svg' %}" alt="Les frais annexes" class="image" />
+					<div class="content">
+						<a class="header">Les dons Helloasso me seront-ils remboursés ?</a>
+						<div class="description">
+							<p>Non, les dons faits à Helloasso ne peuvent prétendre à aucun remboursement de la part de la nuit de l'ENIB, tout comme, les frais de transports, d’hôtellerie, de gestion, d’envoi, etc. Seul le prix du billet sera remboursé.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

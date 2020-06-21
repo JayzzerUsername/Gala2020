@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{# config #}
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{# Référencement #}
+		<meta name="keyword" content="gala,enib,nuit,2020,diplome{% for word in meta.keywords %},{{word}}{% endfor %}">
+		<meta name="description" content="{{ meta.description }}">
+		<link rel="canonical" href="https://gala.enib.net/" />
+		<title>
+			{% if pagetitle %}{{ pagetitle }} -{% endif %}
+			Nuit de l'Enib
+		</title>
+
+		{# Favicon #}
+		<link rel="shortcut icon" href="{% asset 'img/favicon/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% asset 'img/favicon/favicon.png' %}" type="image/png">
+		<link rel="icon" sizes="32x32" href="{% asset 'img/favicon/favicon-32.png' %}" type="image/png">
+		<link rel="icon" sizes="64x64" href="{% asset 'img/favicon/favicon-64.png' %}" type="image/png">
+		<link rel="icon" sizes="96x96" href="{% asset 'img/favicon/favicon-96.png' %}" type="image/png">
+
+		{# CSS #}
+		<link rel="stylesheet" href="{% asset 'css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,500">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100i,300,400,500,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allura">
+		{% block css %}{% endblock %}
+	</head>
+	<body>
+		{% block sidebar %}{% endblock %}
+
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+
+			<div class="loader-section section-left"></div>
+			<div class="loader-section section-right"></div>
+		</div>
+
+		{% block body %}
+		{% endblock %}
+
+		<script type="text/javascript" src="{% asset 'js/jquery.js' %}"></script>
+		<script type="text/javascript" src="{% asset 'js/function.js' %}"></script>
+		{% block js %}{% endblock %}
+	</body>
+</html>

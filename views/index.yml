@@ -1,0 +1,6 @@
+path: /
+template: index
+context:
+  static:
+    meta:
+      description: Site du gala de l'enib. Date, lieu, déroulement de la journée

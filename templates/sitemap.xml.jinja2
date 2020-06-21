@@ -1,0 +1,52 @@
+<xml version="1.0" encoding="UTF-8">
+
+<urlset xmlns="http://www.google.com/schemas/Sitemap/0.9">
+    <url>
+        <loc>{% url 'cashless' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'day' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'index' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>always</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'info' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'partners' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'store' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>{% url 'team' %}</loc>
+        <lastmod>{{ now|date("%Y-%m-%d") }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>

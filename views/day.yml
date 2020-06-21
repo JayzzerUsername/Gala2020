@@ -1,0 +1,11 @@
+path: /day
+template: day
+context:
+  static:
+    pagetitle: Journée
+    meta:
+      description: Description du déroulement de la journée.
+      keywords:
+        - description
+        - journée
+        - déroulement

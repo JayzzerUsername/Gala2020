@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% asset 'css/default.css' %}">
+    <link rel="stylesheet" href="{% asset 'semantic-ui/semantic.min.css' %}">
+{% endblock %}
+
+{% block sidebar %}
+	<div class="ui sidebar huge inverted menu vertical">
+		<div class="item">
+			<div class="header">Navigations</div>
+			<div class="menu">
+				<a href="{% url 'index' %}" class="item">Accueil <i class="icon home"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'day' %}" class="item">Journée <i class="icon calendar"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'team' %}" class="item">L'équipe <i class="icon users"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'store' %}" class="item">Billetterie <i class="icon ticket"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'partners' %}" class="item">Partenaires <i class="icon handshake"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'cashless' %}" class="item">Cashless <i class="icon dollar sign"></i></a>
+			</div>
+			<div class="menu">
+				<a href="{% url 'info' %}" class="item">Infos pratiques <i class="icon info circle"></i></a>
+			</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block body %}
+	<div class="pusher">
+		<nav class="header-nav-min">
+			<a class="btn-header"><i class="icon sidebar"></i></a>
+		</nav>
+		<header>
+			<a href="{% url 'index' %}" class="header-title"><h1>Nuit de l'enib</h1></a>
+			<nav class="header-nav-max">
+				<a href="{% url 'day' %}">Journée</a>
+				<a href="{% url 'team' %}">L'équipe</a>
+				<a href="{% url 'store' %}">Billetterie</a>
+				<a href="{% url 'partners' %}">Partenaires</a>
+				<a href="{% url 'cashless' %}">Cashless</a>
+				<a href="{% url 'info' %}" >Infos pratiques</a>
+			</nav>
+		</header>
+
+		{% block content %}
+		{% endblock %}
+
+		<footer>
+			<div class="ui stackable thre equal width grid">
+				<div class="column"><i class="icon copyright"></i> 2020 Nuit de l'enib</div>
+				<div class="column">
+					<a target="_blank" href="https://www.facebook.com/Nuit-de-lENIB-1672448326336009/">
+						<i class="icon grey facebook"></i>
+					</a> | 
+					<a class="icone icone-mail" target="_blank" href="mailto:nuitenib@enib.fr">
+						<i class="icon grey mail"></i>
+					</a> | 
+					<a class="icone icone-enib" target="_blank" href="https://enib.net/">
+						<svg height="1.18em" width="2.18em">
+							<text x="0" y="16" >ENIB</text>
+						</svg> 
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
+{% endblock %}

@@ -1,0 +1,10 @@
+path: /cashless
+template: cashless
+context:
+  static:
+    pagetitle: Cashless
+    meta:
+      description: Description de l'utilisation du cashless.
+      keywords:
+        - description
+        - cashless

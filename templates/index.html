@@ -1,39 +1,17 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keyword" content="gala,enib,nuit,2020,diplome">
-		<meta name="description" content="Site du gala de l'enib. Date, lieu, déroulement de la journée" />
-		<title>Nuit de l'Enib</title>
-		<!-- TODO : Mettre à jour le Favicon. -->
-		<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/img/favicon/favicon.png" type="image/png">
-		<link rel="icon" sizes="32x32" href="/img/favicon/favicon-32.png" type="image/png">
-		<link rel="icon" sizes="64x64" href="/img/favicon/favicon-64.png" type="image/png">
-		<link rel="icon" sizes="96x96" href="/img/favicon/favicon-96.png" type="image/png"> 
-		<link rel="stylesheet" href="css/home.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-		<div id="loader-wrapper">
-			<div id="loader"></div>
+{% extends "base.html" %}
 
-			<div class="loader-section section-left"></div>
-			<div class="loader-section section-right"></div>
+{% block css %}
+	<link rel="stylesheet" href="{% asset 'css/home.css' %}">
+{% endblock %}
 
-		</div>
-		<div class="content" id="content">
-			<div class="content-home"></div>
-			<div class="btn-home">
-				<div class="btn">
-					<button class="button ticket" onclick="location.href = 'info.html';" >Aller vers la FAQ</button>
-					<button class="button arrow" onclick="location.href = 'day.html';" >Aller vers le site</button>
-				</div>
+{% block body %}
+	<div class="content" id="content">
+		<div class="content-home"></div>
+		<div class="btn-home">
+			<div class="btn">
+				<button class="button ticket" onclick="location.href = '{% url 'info' %}';" >Aller vers la FAQ</button>
+				<button class="button arrow" onclick="location.href = '{% url 'day' %}';" >Aller vers le site</button>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/function.js"></script>
-	</body>
-</html>
+	</div>
+{% endblock %}

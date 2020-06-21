@@ -1,0 +1,10 @@
+path: /partners
+template: partners
+context:
+  static:
+    pagetitle: Partenaires
+    meta:
+      description: Descriptions des partenaires qui ont rendu possible cette événement.
+      keywords:
+        - description
+        - partenaires

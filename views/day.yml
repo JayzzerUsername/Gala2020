@@ -9,3 +9,5 @@ context:
         - description
         - journée
         - déroulement
+  dynamic:
+    timeline: session.query(Timeline).order_by(Timeline.order).all()

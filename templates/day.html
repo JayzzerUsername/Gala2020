@@ -20,120 +20,29 @@
 		<div class="content">
 			<section class="timeline">
 				<div class="container">
+					{% for item in timeline %}
 					<div class="timeline-item">
 						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
+						<div class="timeline-content{% if item.image %} timeline-card{% endif %}">
+							{% if item.image %}
 							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/rdd.jpg' %}" alt="gala enib bonnet ansquer glen"/>
-								<h2>Remise des diplômes</h2>
+								<img src="{{ item.image }}" alt="{{ item.image_alt }}"/>
+								<h2>{{ item.title }}</h2>
 							</div>
-							<div class="date">14h00</div>
-							<p>La journée commence par la très divertissante cérémonie de remise des diplômes au Multiplexe à Liberté, en début d’après-midi. Cette cérémonie, ouverte au public, est animée par la compagnie de théâtre Appogiature, qui réalise un spectacle entre les discours dans la joie et la bonne humeur.</p>
-							<p>De nombreuses personnes viennent pour féliciter nos diplômés et leur transmettre un dernier message, tels le directeur de l’ENIB, le président de l'ANIENIB, le parrain ou la marraine et le représentant de la promotion.</p>
-							<a class="bnt-more" href="http://www.appoggiature.fr/" target="_blank" >Appogiature ?</a>
-						</div>
-					</div> 
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/diner.jpg' %}" alt="gala enib dinner" />
-								<h2>Le dîner</h2>
-							</div>
-							<div class="date">19h00</div>
-							<p>La soirée gala se divise en deux parties. Dans un premier temps un dîner à l'Espace Keraudy aux alentours de 19h permet de passer un moment agréable autour de délicieux plats concoctés par notre traiteur.</p><br />
-						</div>
-					</div>
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content">
-							<div class="date">21h15 et 21h45</div>
+							<div class="date">{{ item.hour }}</div>
+							{% else %}
+							<div class="date">{{ item.hour }}</div><br />
+							<h2>{{ item.title }}</h2>
+							{% endif %}
+							{{ item.content }}
+							{% if item.more_url -%}
+							<a class="bnt-more" href="{{ item.more_url }}"{% if not item.more_internal %} target="_blank"{% endif %}>{{ item.more_text }}</a>
+							{% else %}
 							<br />
-							<h2>Navette pour la Soirée de Gala</h2>
-							<p>Liberté – Fort Montbarey – ENIB</p>
-							<p>Direction l'Espace Kéraudy</p>
-							<a class="bnt-more" href="info.html">S'y rendre</a>
+							{%- endif %}
 						</div>
 					</div>
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/soiree.jpg' %}" alt="gala enib soiree" />
-								<h2>La soirée</h2>
-							</div>
-							<div class="date">22h00</div>
-							<p>
-								Robes de soirée et smokings sont de rigueur pour cette soirée d’exception où plus de 450 personnes sont attendues.
-								Importante dans la vie étudiante de l'ENIB, c'est un moment privilégié à partager avec les nouveaux diplômés.
-								<br />
-								La fête peut commencer !
-							</p><br />
-						</div>
-					</div>
-					<!-- TODO: Mettre à jour l'horaire des groupes de musique. -->
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/stoht.jpg' %}" alt="groupe stoht" />
-								<!-- <h2></h2> --> 
-							</div>
-							<div class="date">ND</div>
-							<p>STÖHT est un Collectif Brestois proposant un répertoire totalement original mêlant rock, jazz, funk et musiques improvisées.</p>
-							<a class="bnt-more" href="https://stohtbrest.wixsite.com/stoht" target="_blank" >A propos de STÖHT</a>
-						</div>
-					</div>
-					{# <div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/the_lost_comet.jpg' %}" alt="groupe the lost comet" />
-								<h2></h2> 
-							</div>
-							<div class="date">ND</div>
-							<p></p>
-							<a class="bnt-more" href="" target="_blank" >A propos de The Lost Comet</a>
-						</div>
-					</div> #}
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/atlas_for_home.jpg' %}" alt="groupe atlas for home" />
-								<h2></h2> 
-							</div>
-							<div class="date">ND</div>
-							<p>Atlas For Home est un groupe de rock alternatif parisien, lancé fin 2013 et influencé par des groupes comme blink-182, The Dangerous Summer et Biffy Clyro.</p>
-							<p>Sur scène, Atlas For Home est un condensé d'énergies positives et de malice, caractère forgé lors de dates notables à la Boule Noire, au Backstage O'Sullivan ou au Batofar, aux côtés de formations confirmées telles que Four Year Strong, States Champs et Moose Blood.</p>
-							<a class="bnt-more" href="https://difymusic.com/atlasforhome" target="_blank" >A propos de Atlas For Home</a>
-						</div>
-					</div>
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content timeline-card">
-							<div class="timeline-img-header">
-								<img src="{% asset 'img/day/dj.jpg' %}" alt="groupe dj" />
-								<h2>DJs</h2> 
-							</div>
-							<div class="date">ND</div>
-							<p>La danse se poursuivra jusqu'au bout de la nuit grâce à deux DJ. L'un vient de Normandie, l'autre de la région parisienne et à eux deux, ils vont mettre le feu !</p>
-							{# <a class="bnt-more" href="" target="_blank" >A propos de nos DJ</a> #}
-						</div>
-					</div>
-
-					<div class="timeline-item">
-						<div class="timeline-img"></div>
-						<div class="timeline-content">
-							<div class="date">2h00 – 2h30 – 3h20</div>
-							<br />
-							<h2>Navette de retour</h2>
-							<p>Espace Kéraudy</p>
-							<p>Direction ENIB – Fort Montbarey – Liberté</p>
-							<a class="bnt-more" href="{% url 'info' %}">S'y rendre</a>
-						</div>
-					</div>
-				</div>
+					{% endfor %}
 			</section>
 		</div>
 {% endblock %}

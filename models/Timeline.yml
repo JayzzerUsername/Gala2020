@@ -1,0 +1,10 @@
+order: Integer
+image: String
+image_alt: String
+title: String
+slug: String
+hour: String
+content: Content
+more_url: String
+more_text: String
+more_internal: Boolean

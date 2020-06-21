@@ -43,12 +43,17 @@
 		<header>
 			<a href="{% url 'index' %}" class="header-title"><h1>Nuit de l'enib</h1></a>
 			<nav class="header-nav-max">
-				<a href="{% url 'day' %}">Journée</a>
-				<a href="{% url 'team' %}">L'équipe</a>
-				<a href="{% url 'store' %}">Billetterie</a>
-				<a href="{% url 'partners' %}">Partenaires</a>
-				<a href="{% url 'cashless' %}">Cashless</a>
-				<a href="{% url 'info' %}" >Infos pratiques</a>
+				{%- macro header_nav_item(view, title) -%}
+				{% set u %}{% url view %}{% endset %}
+				<a {% if False %} class="is-active" {% endif -%}
+					href="{{ u }}">{{ title }}</a>
+				{%- endmacro -%}
+				{{ header_nav_item('day', 'Journée') -}}
+				{{ header_nav_item('team', "L'équipe") -}}
+				{{ header_nav_item('store', 'Billetterie') -}}
+				{{ header_nav_item('partners', 'Partenaires') -}}
+				{{ header_nav_item('cashless', 'Cashless') -}}
+				{{ header_nav_item('info', 'Infos pratiques') }}
 			</nav>
 		</header>
 

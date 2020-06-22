@@ -9,3 +9,5 @@ context:
         - informations
         - tarifs
         - navettes
+  dynamic:
+    faq: session.query(FAQ).order_by(FAQ.order).all()

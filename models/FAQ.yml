@@ -1,0 +1,6 @@
+order: Integer
+slug: String
+image: String
+image_alt: String
+question: String
+answer: Content

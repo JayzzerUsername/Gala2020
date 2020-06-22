@@ -1,4 +1,4 @@
-/* line 8, ../scss/home.scss */
+/* line 6, ../scss/home.scss */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-/* line 15, ../scss/home.scss */
+/* line 13, ../scss/home.scss */
 a {
   color: #141419;
   font-style: normal;
@@ -14,28 +14,29 @@ a {
   font-family: 'Mukta Mahee', sans-serif;
 }
 
-/* line 22, ../scss/home.scss */
+/* line 20, ../scss/home.scss */
 .inline-block {
   display: inline-block;
   margin: 10px;
 }
 
-/* line 23, ../scss/home.scss */
+/* line 21, ../scss/home.scss */
 .left {
   float: left;
 }
 
-/* line 24, ../scss/home.scss */
+/* line 22, ../scss/home.scss */
 .right {
   float: right;
 }
 
-/* line 26, ../scss/home.scss */
+/* line 24, ../scss/home.scss */
 body {
   width: 100vw;
   overflow-x: hidden;
 }
-/* line 31, ../scss/home.scss */
+
+/* line 29, ../scss/home.scss */
 body .content {
   width: 100vw;
   height: 100vh;
@@ -45,19 +46,22 @@ body .content {
   top: 0;
   left: 0;
 }
-/* line 39, ../scss/home.scss */
+
+/* line 37, ../scss/home.scss */
 body .content .content-home {
   display: block;
   position: absolute;
 }
-/* line 43, ../scss/home.scss */
+
+/* line 41, ../scss/home.scss */
 body .content .btn-home {
   position: absolute;
   bottom: 15%;
   left: 0;
   width: 100vw;
 }
-/* line 49, ../scss/home.scss */
+
+/* line 47, ../scss/home.scss */
 body .content .btn-home .btn {
   display: -webkit-flex;
   display: flex;
@@ -66,7 +70,8 @@ body .content .btn-home .btn {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 68, ../scss/home.scss */
+
+/* line 58, ../scss/home.scss */
 body #loader-wrapper {
   position: fixed;
   top: 0;
@@ -75,7 +80,8 @@ body #loader-wrapper {
   height: 100%;
   z-index: 1000;
 }
-/* line 76, ../scss/home.scss */
+
+/* line 66, ../scss/home.scss */
 body #loader {
   display: block;
   position: relative;
@@ -92,7 +98,8 @@ body #loader {
   animation: spin 2s linear infinite;
   z-index: 1001;
 }
-/* line 91, ../scss/home.scss */
+
+/* line 83, ../scss/home.scss */
 body #loader:before {
   content: "";
   position: absolute;
@@ -107,7 +114,8 @@ body #loader:before {
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
-/* line 104, ../scss/home.scss */
+
+/* line 98, ../scss/home.scss */
 body #loader:after {
   content: "";
   position: absolute;
@@ -122,6 +130,7 @@ body #loader:after {
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -140,6 +149,7 @@ body #loader:after {
     /* Firefox 16+, IE 10+, Opera */
   }
 }
+
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -158,7 +168,8 @@ body #loader:after {
     /* Firefox 16+, IE 10+, Opera */
   }
 }
-/* line 143, ../scss/home.scss */
+
+/* line 139, ../scss/home.scss */
 body #loader-wrapper .loader-section {
   position: fixed;
   top: 0;
@@ -167,52 +178,19 @@ body #loader-wrapper .loader-section {
   background: #222;
   z-index: 1000;
 }
-/* line 152, ../scss/home.scss */
+
+/* line 148, ../scss/home.scss */
 body #loader-wrapper .loader-section.section-left {
   left: 0;
 }
-/* line 155, ../scss/home.scss */
+
+/* line 151, ../scss/home.scss */
 body #loader-wrapper .loader-section.section-right {
   right: 0;
 }
 
 /* Loaded styles */
-/* line 161, ../scss/home.scss */
-.loaded #loader-wrapper .loader-section.section-left {
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -moz-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-  -o-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-  -webkit-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -webkit-transition-delay: 0.3s;
-  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-}
-
-/* line 165, ../scss/home.scss */
-.loaded #loader-wrapper .loader-section.section-right {
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  -moz-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-  -o-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-  -webkit-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -webkit-transition-delay: 0.3s;
-  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-}
-
-/* line 169, ../scss/home.scss */
-.loaded #loader {
-  opacity: 0;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-
-/* line 174, ../scss/home.scss */
+/* line 158, ../scss/home.scss */
 .loaded #loader-wrapper {
   visibility: hidden;
   -moz-transform: translateY(-100%);
@@ -226,7 +204,42 @@ body #loader-wrapper .loader-section.section-right {
   transition: all 0.3s ease-out 1s;
 }
 
-/* line 188, ../scss/home.scss */
+/* line 170, ../scss/home.scss */
+.loaded #loader-wrapper .loader-section.section-left {
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  -o-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  -webkit-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition-delay: 0.3s;
+  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+}
+
+/* line 181, ../scss/home.scss */
+.loaded #loader-wrapper .loader-section.section-right {
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  -o-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+  -webkit-transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition-delay: 0.3s;
+  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
+}
+
+/* line 193, ../scss/home.scss */
+.loaded #loader {
+  opacity: 0;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* line 210, ../scss/home.scss */
 .button {
   display: inline-block;
   margin: 15px;
@@ -241,7 +254,8 @@ body #loader-wrapper .loader-section.section-right {
   color: white;
   transition: .2s;
 }
-/* line 201, ../scss/home.scss */
+
+/* line 223, ../scss/home.scss */
 .button:before, .button:after {
   position: absolute;
   top: 0;
@@ -257,64 +271,75 @@ body #loader-wrapper .loader-section.section-right {
   transition: .2s;
   transform-origin: 50% 60%;
 }
-/* line 218, ../scss/home.scss */
+
+/* line 240, ../scss/home.scss */
 .button:before {
   background: fadeout(#000, 90%);
 }
-/* line 221, ../scss/home.scss */
+
+/* line 243, ../scss/home.scss */
 .button:hover {
   background: #0079a5;
 }
-/* line 224, ../scss/home.scss */
+
+/* line 246, ../scss/home.scss */
 .button:active, .button:focus {
   background: #002e3f;
   outline: none;
 }
 
-/* line 231, ../scss/home.scss */
+/* line 253, ../scss/home.scss */
 .button {
   min-width: 15em;
 }
 
-/* line 235, ../scss/home.scss */
+/* line 257, ../scss/home.scss */
 .arrow {
   background: #876357;
 }
-/* line 237, ../scss/home.scss */
+
+/* line 259, ../scss/home.scss */
 .arrow:hover {
   background: #684c43;
 }
-/* line 240, ../scss/home.scss */
+
+/* line 262, ../scss/home.scss */
 .arrow:active, .arrow:focus {
   background: #2a1f1b;
 }
-/* line 244, ../scss/home.scss */
+
+/* line 266, ../scss/home.scss */
 .arrow:after {
   content: "\F054";
 }
-/* line 247, ../scss/home.scss */
+
+/* line 269, ../scss/home.scss */
 .arrow:hover:after {
   -webkit-animation: bounceright .3s alternate ease infinite;
   animation: bounceright .3s alternate ease infinite;
 }
 
-/* line 253, ../scss/home.scss */
+/* line 275, ../scss/home.scss */
 .ticket {
   background: #876357;
 }
-/* line 255, ../scss/home.scss */
+
+/* line 277, ../scss/home.scss */
 .ticket:hover {
   background: #684c43;
 }
-/* line 258, ../scss/home.scss */
+
+/* line 280, ../scss/home.scss */
 .ticket:active, .ticket:focus {
   background: #2a1f1b;
 }
-/* line 262, ../scss/home.scss */
+
+/* line 284, ../scss/home.scss */
 .ticket:after {
   content: "\F145";
 }
-/* line 265, ../scss/home.scss */
+
+/* line 287, ../scss/home.scss */
 .ticket:hover:after {
   font-size: 1.5em;
   -moz-transition: 0.3s;
@@ -323,22 +348,6 @@ body #loader-wrapper .loader-section.section-right {
   transition: 0.3s;
 }
 
-@-moz-keyframes bounceright {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(3px);
-  }
-}
-@-webkit-keyframes bounceright {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(3px);
-  }
-}
 @keyframes bounceright {
   0% {
     transform: translateX(0);
@@ -347,8 +356,9 @@ body #loader-wrapper .loader-section.section-right {
     transform: translateX(3px);
   }
 }
+
 @media screen and (min-width: 1280px) {
-  /* line 283, ../scss/home.scss */
+  /* line 307, ../scss/home.scss */
   .content .content-home {
     width: 100vw;
     height: 100vh;
@@ -356,8 +366,9 @@ body #loader-wrapper .loader-section.section-right {
     background-size: 100% 100%;
   }
 }
+
 @media screen and (min-width: 850px) and (max-width: 1280px) {
-  /* line 293, ../scss/home.scss */
+  /* line 317, ../scss/home.scss */
   .content .content-home {
     width: 100%;
     height: 100%;
@@ -365,8 +376,9 @@ body #loader-wrapper .loader-section.section-right {
     background-size: 130% 100%;
   }
 }
+
 @media screen and (min-width: 450px) and (max-width: 850px) {
-  /* line 302, ../scss/home.scss */
+  /* line 326, ../scss/home.scss */
   .content .content-home {
     width: 100%;
     height: 100%;
@@ -374,8 +386,9 @@ body #loader-wrapper .loader-section.section-right {
     background-size: 100% 100%;
   }
 }
+
 @media screen and (max-width: 450px) {
-  /* line 312, ../scss/home.scss */
+  /* line 336, ../scss/home.scss */
   .content .content-home {
     width: 100%;
     height: 100%;

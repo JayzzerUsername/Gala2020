@@ -1,0 +1,7 @@
+order: Integer
+first_name: String
+last_name: String
+picture: String
+role: String
+citation: Text
+personne_citee: String

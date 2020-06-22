@@ -9,3 +9,6 @@ context:
         - description
         - journée
         - équipe
+  dynamic:
+    team: session.query(TeamMember).order_by(TeamMember.order).all()
+

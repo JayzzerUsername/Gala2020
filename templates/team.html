@@ -11,430 +11,59 @@
 
 			<div class="content-sizer max">
 				<div class="staff-container">
-					<div class="staff staff-card" style="display:none;" id="staff-1-card">
+					{% for member in team %}
+					<div class="staff staff-card" style="display:none;" id="staff-{{ member.order }}-card">
 						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/emma.jpg' %}" class="img-staff left" />
+							<img src="{{ member.picture }}" class="img-staff left" />
 						</div>
 						<div class="staff-text">
-							<p class="staff-p staff-p-work">Présidente</p>
-							<p class="staff-p staff-p-name">Emma DARBOIS</p>
+							<p class="staff-p staff-p-work">{{ member.role }}</p>
+							<p class="staff-p staff-p-name">{{ member.first_name }} {{ member.last_name|upper }}</p>
 							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan">Mais alors, si le monde n'a absolument aucun sens, qu'est-ce qui nous empêche d'en inventer un ?<br /> - Alice</p>
+							<p class="staff-p staff-p-slogan">
+								{% if member.citation -%}
+								{{ member.citation }}
+								{%- if member.personne_citee -%}
+								<br /> - {{ member.personne_citee }}
+								{%- endif %}
+								{%- endif %}
+							</p>
 						</div>
 					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-2-card">
+					{%- endfor %}
+
+					{%- for member in team %}
+					<div class="staff" id="staff-{{ member.order }}">
 						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/edwin.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Vice-Président</p>
-							<p class="staff-p staff-p-name">Edwin KERBAUL</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan">Le meilleur moyen de réaliser l’impossible est de croire que c’est possible.<br /> - le chapelier fou</p>
+							<img src="{{ member.picture }}" class="img-staff left" />
 						</div>
 					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-3-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/julie.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Vice-Présidente</p>
-							<p class="staff-p staff-p-name">Julie LOUSSAUT</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan">Aucune épreuve n’a jamais été surmontée en versant des larmes.<br /> - La chenille à Alice</p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-4-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/julien.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Trésorier</p>
-							<p class="staff-p staff-p-name">Julien PARISSET</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-5-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/alexandre.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Secrétaire</p>
-							<p class="staff-p staff-p-name">Alexandre BONIZEC</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan">C'est classe, d'être classe.</p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-6-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/aymeric.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Secrétaire</p>
-							<p class="staff-p staff-p-name">Aymeric LE GUEN</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-7-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/gwendal.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Co-Responsable Remise des Diplômes</p>
-							<p class="staff-p staff-p-name">Gwendal ABJEAN</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-9-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/stannick.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Co-Responsable Remise des Diplômes</p>
-							<p class="staff-p staff-p-name">Stannick LE GAL</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-10-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/kenza.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Responsable Décorations</p>
-							<p class="staff-p staff-p-name">Kenza GAULTIER</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-11-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/hermine.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Membre du pôle Décorations</p>
-							<p class="staff-p staff-p-name">Hermine</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>               
-					<div class="staff staff-card" style="display:none;" id="staff-12-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/alexis.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Responsable Partenariats</p>
-							<p class="staff-p staff-p-name">Alexis CAILLARD</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-13-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/lucas.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Membre du pôle Partenariats</p>
-							<p class="staff-p staff-p-name">Lucas DE LAFORET</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-14-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/arthur.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Responsable Musique</p>
-							<p class="staff-p staff-p-name">Arthur GOURHAND</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan"></p>
-						</div>
-					</div>
-					<div class="staff staff-card" style="display:none;" id="staff-15-card">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/robin.jpg' %}" class="img-staff left" />
-						</div>
-						<div class="staff-text">
-							<p class="staff-p staff-p-work">Responsable Surprise</p>
-							<p class="staff-p staff-p-name">Robin Caudy</p>
-							<p class="staff-p staff-p-label">Citation  : </p>
-							<p class="staff-p staff-p-slogan">Si je ne m'abuse, il a un penchant très prononcé pour la pyrotechnie.<br />- Minerva McGonagall</p>
-						</div>
-					</div>
-					<div class="staff" id="staff-1">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/emma.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-2">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/edwin.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-3">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/julie.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-4">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/julien.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-5">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/alexandre.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-6">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/aymeric.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-7">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/gwendal.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-9">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/stannick.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-10">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/kenza.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-11">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/hermine.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-12">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/alexis.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-13">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/lucas.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-14">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/arthur.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
-					<div class="staff" id="staff-15">
-						<div class="staff-picture">
-							<img src="{% asset 'img/staff-picture/robin.jpg' %}" class="img-staff left" />
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 
 			<div class="content-sizer min">
+				{% for member in team %}
 				<div class="ui card">
 					<div class="image">
-						<img src="{% asset 'img/staff-picture/emma.jpg' %}">
+						<img src="{{ member.picture }}">
 					</div>
 					<div class="content">
-						<a class="header">Présidente</a>
+						<a class="header">{{ member.role }}</a>
 						<div class="meta">
-							<span class="date">Emma DARBOIS</span>
+							<span class="date">{{ member.first_name }} {{ member.last_name|upper }}</span>
 						</div>
 						<div class="description">
-							Mais alors, si le monde n'a absolument aucun sens, qu'est-ce qui nous empêche d'en inventer un ?<br /> - Alice
+							{% if member.citation -%}
+							{{ member.citation }}
+							{%- if member.personne_citee -%}
+							<br /> - {{ member.personne_citee }}
+							{%- endif %}
+							{%- endif %}
 						</div>
 					</div>
 				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/edwin.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Vice-Président</a>
-						<div class="meta">
-							<span class="date">Edwin KERBAUL</span>
-						</div>
-						<div class="description">
-							Le meilleur moyen de réaliser l’impossible est de croire que c’est possible.<br /> - le chapelier fou
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/julie.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Vice-Présidente</a>
-						<div class="meta">
-							<span class="date">Julie LOUSSAUT</span>
-						</div>
-						<div class="description">
-							Aucune épreuve n’a jamais été surmontée en versant des larmes.<br /> - La chenille à Alice
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/julien.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Trésorier</a>
-						<div class="meta">
-							<span class="date">Julien PARISSET</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/alexandre.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Secrétaire</a>
-						<div class="meta">
-							<span class="date">Alexandre BONIZEC</span>
-						</div>
-						<div class="description">
-							C'est classe, d'être classe.
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/aymeric.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Secrétaire</a>
-						<div class="meta">
-							<span class="date">Aymeric LE GUEN</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/gwendal.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Co-Responsable Remise des Diplômes</a>
-						<div class="meta">
-							<span class="date">Gwendal ABJEAN</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/stannick.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Co-Responsable Remise des Diplômes</a>
-						<div class="meta">
-							<span class="date">Stannick LE GAL</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/kenza.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Décorations</a>
-						<div class="meta">
-							<span class="date">Kenza GAULTIER</span>
-						</div>
-						<div class="description">
-							
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/hermine.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Décorations</a>
-						<div class="meta">
-							<span class="date">Hermine OLIVE</span>
-						</div>
-						<div class="description">
-							
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/alexis.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Partenariats</a>
-						<div class="meta">
-							<span class="date">Alexis CAILLARD</span>
-						</div>
-						<div class="description">
-							
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/lucas.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Partenariats</a>
-						<div class="meta">
-							<span class="date">Alexis CAILLARD</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/arthur.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Musique</a>
-						<div class="meta">
-							<span class="date">Arthur GOURHAND</span>
-						</div>
-						<div class="description">
-
-						</div>
-					</div>
-				</div>
-				<div class="ui card">
-					<div class="image">
-						<img src="{% asset 'img/staff-picture/robin.jpg' %}">
-					</div>
-					<div class="content">
-						<a class="header">Responsable Surprise</a>
-						<div class="meta">
-							<span class="date">Robin CAUDY</span>
-						</div>
-						<div class="description">
-							Si je ne m'abuse, il a un penchant très prononcé pour la pyrotechnie.<br />- Minerva McGonagall
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 {% endblock %}

@@ -1,4 +1,4 @@
-$primary: #f96d00;
+$primary: #bf5300;
 $dark-primary: #ffaf00;
 $light-primary: #393e46;
 $text: rgba(255, 255, 255, 0.8);
@@ -39,10 +39,6 @@ h1 {
   padding-top: 40px;
 }
 
-h2{
-	padding-top: 30px;
-}
-
 .timeline {
 
 	position: relative;
@@ -76,7 +72,6 @@ h2{
     
         &:hover, &:active, &:focus {
             background: darken($primary, 10%);
-            color: $text;
             text-decoration: none;
         }
     

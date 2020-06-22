@@ -1,0 +1,7 @@
+order: Integer
+name: String
+type: String
+description: Content
+image: String
+image_alt: String
+link: String

@@ -10,65 +10,22 @@
 	<div class="content">
 		<div class="content-sizer">
 			<div class="ui divided huge items">
+				{% for partner in partners %}
 				<div class="item">
-					<a href="//enib.fr/" target="_blank" class="image">
-						<img src="{% asset 'img/partner/1.png' %}" alt="enib" />
+					<a href="{{ partner.link }}" target="_blank" class="image">
+						<img src="{{ partner.image }}" alt="{{ partner.image_alt }}" />
 					</a>
 					<div class="content">
-						<a class="header">ENIB</a>
+						<a class="header">{{ partner.name }}</a>
 						<div class="meta">
-							<span>Partenaires institutionnels</span>
+							<span>{{ partner.type }}</span>
 						</div>
 						<div class="description">
-							<p>L'ENIB est une école publique installée à Brest, accréditée par la Commission des Titres d'Ingénieur, membre de la Conférence des Grandes Écoles et associée à l'Institut Mines-Télécom. L'école forme en 5 ans des ingénieurs généralistes dans les domaines de l'électronique, de l'informatique et de la mécatronique en lien avec une recherche de haut niveau. L'école, tout en préparant ses élèves ingénieurs à exercer leur futur métier dans un cadre international, offre des enseignements originaux, en lien direct avec  ses valeurs d’humanisme, d’ouverture d’esprit et d’engagement sociétal. La formation académique est complétée par des stages en entreprise et des activités professionnalisantes tout au long du cursus. L'ENIB recrute à différents niveaux pour une rentrée en septembre et propose aussi une une rentrée en janvier pour les titulaires du Bac.</p>
+							{{ partner.description }}
 						</div>
 					</div>
 				</div>
-				<div class="item">
-					<a href="//anienib.fr/" target="_blank" class="image">
-						<img src="{% asset 'img/partner/2.jpg' %}" alt="anienib" />
-					</a>
-					<div class="content">
-						<a class="header">ANIENIB</a>
-						<div class="meta">
-							<span>Partenaires institutionnels</span>
-						</div>
-						<div class="description">
-							<p>L'Anienib (Association Nationale des Ingénieurs ENIB (École Nationale d'Ingénieurs de Brest)) regroupe aujourd'hui plus de 4629 ingénieurs ENIB de la promotion 1965 à la promotion 2016. Créée en 1967, l'Anienib rassemble tous les Diplômés de l'ENIB autour d'un capital commun : Solidarité, Ouverture internationale, Esprit d'entreprise...</p>
-							<p>Elle a pour mission de maintenir les relations entre les ingénieurs ENIB et l’école ainsi que de renforcer les liens de solidarité entre les anciens élèves. Elle permet également une transition et est une interface entre l’école et la vie professionnelle des ingénieurs. Les ingénieurs ENIB sont devenus des acteurs reconnus de la vie économique, en France, en Europe et dans le monde entier.</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<a href="//www.asi.fr/" target="_blank" class="image">
-						<img src="{% asset 'img/partner/3.jpg' %}" alt="ASI" />
-					</a>
-					<div class="content">
-						<a class="header">ASI</a>
-						<div class="meta">
-							<span>Partenaires commerciaux</span>
-						</div>
-						<div class="description">
-							<p>Spécialisée dans la transformation digitale des organisations publiques et privées, l’entreprise est axée sur 3 grands domaines : la Digitalisation des Processus et Services (Conception et développement d’applications métiers, web et mobile, …), la Data Intelligence (Reporting et analyse, Big Data), la Connaissance et la Collaboration (Intranet/ portail collaboratif, réseau social d'entreprise, …).</p>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<a href="//group.bnpparibas/" target="_blank" class="image">
-						<img src="{% asset 'img/partner/4.png' %}" alt="BNP Paribas" />
-					</a>
-					<div class="content">
-						<a class="header">BNP Paribas</a>
-						<div class="meta">
-							<span>Partenaires commerciaux</span>
-						</div>
-						<div class="description">
-							<p>BNP Paribas est la première banque de la zone euro et un acteur majeur du secteur bancaire à l’échelle internationale. Ce groupe bancaire français est né en 2000 de la fusion entre la Banque National de Paris et Paribas.<br />
-								Elle est présente dans plus de 80 pays et compte environ 200.000 collaborateurs à travers le monde. Elle dispose de l'un des plus importants réseaux bancaires internationaux.<br />
-								Ses actions sont cotées sur le compartiment A d’Euronext Paris et entrent dans la composition de l’indice CAC 40.</p>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

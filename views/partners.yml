@@ -8,3 +8,5 @@ context:
       keywords:
         - description
         - partenaires
+  dynamic:
+    partners: session.query(Partner).order_by(Partner.order).all()

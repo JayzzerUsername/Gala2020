@@ -1,0 +1,83 @@
+backend:
+  name: github
+  repo: JayzzerUsername/Gala2020
+  site_domain: gala.enib.net
+  branch: statik
+
+media_folder: "/assets/img"
+site_url: https://gala.enib.net
+locale: 'fr'
+
+collections:
+  - name: "faq"
+    label: "FAQ"
+    folder: "data/FAQ"
+    preview_path: /info/
+    create: true
+    slug: "{{order}}-{{fields.slug}}"
+    identifier_field: question
+    media_folder: "{{media_folder}}/info"
+    fields:
+      - {label: "Question", name: "question", widget: "string"}
+      - {label: "Réponse", name: "body", widget: "markdown"}
+      - {label: "Ordre", name: "order", widget: "number", valueType: int}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Texte alternatif d'image", name: "image_alt", widget: "string"}
+
+  - name: "partner"
+    label: "Partenaires"
+    label_singular: "Partenaire"
+    folder: "data/Partner"
+    preview_path: /partners/
+    create: true
+    slug: "{{order}}-{{name}}"
+    identifier_field: name
+    media_folder: "{{media_folder}}/partner"
+    fields:
+      - {label: "Nom", name: "name", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Lien", name: "link", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Partenaires institutionnels", "Partenaires commerciaux"]}
+      - {label: "Ordre", name: "order", widget: "number", valueType: int}
+      - {label: "Logo", name: "image", widget: "image"}
+      - {label: "Texte alternatif du logo", name: "image_alt", widget: "string"}
+
+  - name: "team_member"
+    label: "Membres de l'équipe"
+    label_singular: "Membre"
+    folder: "data/TeamMember"
+    preview_path: /team/
+    create: true
+    slug: "{{order}}-{{first_name}}"
+    identifier_field: first_name
+    media_folder: "{{media_folder}}/staff-picture/"
+    extension: yml
+    fields:
+      - {label: "Prénom", name: "first_name", widget: "string"}
+      - {label: "Nom", name: "last_name", widget: "string"}
+      - {label: "Rôle", name: "role", widget: "string"}
+      - {label: "Citation", name: "citation", required: false, widget: "text"}
+      - {label: "Personne citée", name: "personne_citee", required: false, widget: "string"}
+      - {label: "Photo", name: "picture", widget: "image"}
+      - {label: "Ordre", name: "order", widget: "number", valueType: int}
+
+  - name: "timeline"
+    label: "Timeline"
+    folder: "data/Timeline"
+    preview_path: /day/
+    create: true
+    slug: "{{order}}-{{fields.slug}}"
+    identifier_field: slug
+    media_folder: "{{media_folder}}/day"
+    fields:
+      - {label: "Titre", name: "title", required: false, widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Heure(s)", name: "hour", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "URL Voir plus", name: "more_url", required: false, widget: "string"}
+      - {label: "Titre Voir plus", name: "more_title", required: false, widget: "string"}
+      - {label: "URL interne", name: "more_internal", required: false, widget: "boolean"}
+      - {label: "Ordre", name: "order", widget: "number", valueType: int}
+      - {label: "Image", name: "image", required: false, widget: "image"}
+      - {label: "Texte alternatif de l'image", name: "image_alt", required: false, widget: "string"}
